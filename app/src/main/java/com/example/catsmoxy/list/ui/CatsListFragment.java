@@ -112,7 +112,7 @@ public class CatsListFragment extends CatsListBaseFragment implements CatsListVi
                 Uri imageUri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues);
                 outputStream = resolver.openOutputStream(imageUri);
             } else {
-                String imagesDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString();
+                String imagesDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
                 File image = new File(imagesDir, name + ".jpg");
                 outputStream = new FileOutputStream(image);
             }
